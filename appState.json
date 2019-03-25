@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "271Test/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n\n    ddb.get({\n        TableName: '271Table',\n        Key: { 'name': 'kevin' }\n    }).promise().then(function (data) {\n        //your logic goes here\n    }).catch(function (err) {\n        //handle error\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n\n    // ddb.get({\n    //     TableName: '271Table',\n    //     Key: { 'name': 'kevin' }\n    // }).promise().then(function (data) {\n    //     //your logic goes here\n    // }).catch(function (err) {\n    //     //handle error\n    // });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -105,7 +105,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1553489166381
+    "lastSave": 1553489287427
   },
   "VCS_STATE": {
     "provider": "GitHub",
