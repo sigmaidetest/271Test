@@ -1,28 +1,28 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "c198af4b-8a32-419e-a392-d631e2f70fb7": {
-        "id": "c198af4b-8a32-419e-a392-d631e2f70fb7",
+      "2e13f329-cd9f-4ad9-8626-47e562962aa3": {
+        "id": "2e13f329-cd9f-4ad9-8626-47e562962aa3",
         "parent": null,
         "name": "271Test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "a23625c5-1cbc-4c3b-b405-2a1d34c609b2"
+          "4f64e780-5eff-4a00-8f53-89ed3e063c46"
         ],
         "isRemovable": false,
         "filePath": "271Test"
       },
-      "a23625c5-1cbc-4c3b-b405-2a1d34c609b2": {
-        "id": "a23625c5-1cbc-4c3b-b405-2a1d34c609b2",
-        "parent": "c198af4b-8a32-419e-a392-d631e2f70fb7",
+      "4f64e780-5eff-4a00-8f53-89ed3e063c46": {
+        "id": "4f64e780-5eff-4a00-8f53-89ed3e063c46",
+        "parent": "2e13f329-cd9f-4ad9-8626-47e562962aa3",
         "name": "lambda.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "271Test/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n\n    // ddb.get({\n    //     TableName: '271Table',\n    //     Key: { 'name': 'kevin' }\n    // }).promise().then(function (data) {\n    //     //your logic goes here\n    // }).catch(function (err) {\n    //     //handle error\n    // });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n\n    ddb.get({\n        TableName: '271Table',\n        Key: { 'name': 'kevin' }\n    }).promise()\n        .then((data) => {\n            //your logic goes here\n        })\n        .catch((err) => {\n            //handle error\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -34,11 +34,11 @@
       }
     },
     "deletedFiles": [],
-    "rootNode": "c198af4b-8a32-419e-a392-d631e2f70fb7",
+    "rootNode": "2e13f329-cd9f-4ad9-8626-47e562962aa3",
     "openFiles": [
-      "a23625c5-1cbc-4c3b-b405-2a1d34c609b2"
+      "4f64e780-5eff-4a00-8f53-89ed3e063c46"
     ],
-    "currentFileId": "a23625c5-1cbc-4c3b-b405-2a1d34c609b2",
+    "currentFileId": "4f64e780-5eff-4a00-8f53-89ed3e063c46",
     "resources": {
       "ddb271Table": {
         "name": "ddb271Table",
@@ -69,8 +69,7 @@
             "validity": true
           },
           "valid": true
-        },
-        "globallyEditable": false
+        }
       }
     },
     "customTemplate": {
@@ -105,7 +104,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1553489287427
+    "lastSave": 1553490424314
   },
   "VCS_STATE": {
     "provider": "GitHub",
